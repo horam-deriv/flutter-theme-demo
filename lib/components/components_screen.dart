@@ -150,12 +150,19 @@ class ComponentsScreen extends StatelessWidget {
         context: context,
         builder: (BuildContext context) => Container(
           height: 200,
+          padding: const EdgeInsets.all(8),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                const Text('Modal BottomSheet'),
+                const Text('Lorem ipsum dolor sit amet, consectetur adipiscing'
+                    'elit. Nunc lacinia tellus at diam mollis eleifend. Duis '
+                    'consectetur, mauris ut vulputate maximus, lorem lectus maximus'
+                    ' libero, sit amet suscipit ex magna consectetur ligula. '
+                    'Vestibulum convallis at metus eget rhoncus. Cras ornare diam'
+                    ' vel suscipit vehicula. Pellentesque efficitur tempus neque '
+                    'auctor pharetra. '),
                 ElevatedButton(
                   child: const Text('Close'),
                   onPressed: () => Navigator.pop(context),

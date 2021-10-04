@@ -57,10 +57,8 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
         child: ConstrainedBox(
           constraints: BoxConstraints.tight(Size(_width(context), 50)),
           child: TextFormField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderSide: BorderSide(),
-              ),
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
               hintText: 'hint',
             ),
             onSaved: (String? value) {},

@@ -12,11 +12,8 @@ class _FontsDetailsWidget extends StatelessWidget {
   Widget build(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const SizedBox(height: 4),
           _buildChips(),
           _buildMoreData(),
-          const Divider(),
-          const SizedBox(height: 4)
         ],
       );
 
@@ -55,7 +52,9 @@ class _FontsDetailsWidget extends StatelessWidget {
             children: <Widget>[
               const Text('Style'),
               const SizedBox(height: 2),
-              Text(textStyle.fontStyle != null ? _setFontStyle : '-'),
+              Text(
+                textStyle.fontStyle != null ? _setFontStyle : '-',
+              ),
             ],
           ),
           const SizedBox(width: 20),

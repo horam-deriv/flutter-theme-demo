@@ -13,34 +13,32 @@ class _RadioButtonWidgetState extends State<RadioButtonWidget> {
   Type? _character = Type.first;
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        ListTile(
-          title: const Text('First Type'),
-          leading: Radio<Type>(
-            value: Type.first,
-            groupValue: _character,
-            onChanged: (Type? value) {
-              setState(() {
-                _character = value;
-              });
-            },
+  Widget build(BuildContext context) => Row(
+        children: <Widget>[
+          ListTile(
+            title: const Text('First Type'),
+            leading: Radio<Type>(
+              value: Type.first,
+              groupValue: _character,
+              onChanged: (Type? value) {
+                setState(() {
+                  _character = value;
+                });
+              },
+            ),
           ),
-        ),
-        ListTile(
-          title: const Text('Second Type'),
-          leading: Radio<Type>(
-            value: Type.second,
-            groupValue: _character,
-            onChanged: (Type? value) {
-              setState(() {
-                _character = value;
-              });
-            },
+          ListTile(
+            title: const Text('Second Type'),
+            leading: Radio<Type>(
+              value: Type.second,
+              groupValue: _character,
+              onChanged: (Type? value) {
+                setState(() {
+                  _character = value;
+                });
+              },
+            ),
           ),
-        ),
-      ],
-    );
-  }
+        ],
+      );
 }
