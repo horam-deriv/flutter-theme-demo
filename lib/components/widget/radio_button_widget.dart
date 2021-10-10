@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// enum to
 enum Type { first, second }
 
 class RadioButtonWidget extends StatefulWidget {

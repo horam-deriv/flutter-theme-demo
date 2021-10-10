@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// Demonstrates a sample form in flutter.
 class TextFormFieldWidget extends StatefulWidget {
+  /// Creates a sample Form.
   const TextFormFieldWidget();
 
   @override
@@ -17,20 +19,21 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
             onChanged: () {
               Form.of(primaryFocus!.context!)!.save();
             },
-            child: Wrap(
-              alignment: WrapAlignment.center,
-              children: <Widget>[
-                _buildFirstFormField(),
-                _buildSecondFormField(),
-                const SizedBox(height: 20),
-                // elevated button
-                _elevatedButton(context),
-              ],
-            ),
+            child: _buildFormBody(),
           ),
         ),
       );
-  double _width(BuildContext context) => MediaQuery.of(context).size.width - 60;
+
+  Widget _buildFormBody() => Wrap(
+        alignment: WrapAlignment.center,
+        children: <Widget>[
+          _buildFirstFormField(),
+          _buildSecondFormField(),
+          const SizedBox(height: 20),
+          // elevated button
+          _elevatedButton(context),
+        ],
+      );
 
   Widget _buildFirstFormField() => Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),
@@ -65,6 +68,9 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
           ),
         ),
       );
+
+  double _width(BuildContext context) => MediaQuery.of(context).size.width - 60;
+
   Widget _elevatedButton(BuildContext context) => Row(
         children: <Widget>[
           const SizedBox(width: 8),

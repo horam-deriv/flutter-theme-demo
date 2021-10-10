@@ -9,10 +9,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Theme Demo',
+        title: 'BeSquare Theme Sample App',
         theme: ThemeData(
-            primaryColor: Colors.blue,
-            visualDensity: VisualDensity.adaptivePlatformDensity),
+          primaryColor: Colors.blue,
+          brightness: Brightness.dark,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
         home: HomeScreen(),
       );
 }

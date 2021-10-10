@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 
 class ColorCodeWidget extends StatelessWidget {
+  /// Creates a widget to show color code and its value.
   const ColorCodeWidget({
-    required this.title,
+    required this.code,
     required this.value,
   });
 
-  final String title;
+  /// Color code.
+  final String code;
+
+  /// Color value.
   final int? value;
 
   @override
   Widget build(BuildContext context) => Row(
         children: <Widget>[
-          Text('$title :'),
+          Text('$code :'),
           const SizedBox(width: 2),
           Text(value != null ? '$value' : '-'),
         ],

@@ -15,6 +15,7 @@ enum FontType {
 }
 
 class FontsHelper {
+  /// Creates a list of [FontType].
   FontsHelper() {
     _setFonts();
   }

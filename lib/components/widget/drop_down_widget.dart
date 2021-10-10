@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// Shows Drop Down in a screen
 class DropDownWidget extends StatefulWidget {
+  /// Creates a dropDown widget.
   const DropDownWidget();
 
   @override

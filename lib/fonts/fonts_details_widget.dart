@@ -40,29 +40,33 @@ class _FontsDetailsWidget extends StatelessWidget {
 
   Widget _buildMoreData() => Row(
         children: <Widget>[
-          Column(
-            children: <Widget>[
-              const Text('Weight'),
-              const SizedBox(height: 2),
-              Text(_setFontWeight(textStyle.fontWeight)),
-            ],
-          ),
+          _buildTextWeight(textStyle),
           const SizedBox(width: 20),
-          Column(
-            children: <Widget>[
-              const Text('Style'),
-              const SizedBox(height: 2),
-              Text(
-                textStyle.fontStyle != null ? _setFontStyle : '-',
-              ),
-            ],
-          ),
+          _buildTextStyle(textStyle),
           const SizedBox(width: 20),
           _buildColorAvatar(),
           const SizedBox(width: 20),
           _buildFirstColumnColorData(textStyle.color!),
           const SizedBox(width: 20),
           _buildSecondColumnColorData(textStyle.color!),
+        ],
+      );
+
+  Widget _buildTextWeight(TextStyle textStyle) => Column(
+        children: <Widget>[
+          const Text('Weight'),
+          const SizedBox(height: 2),
+          Text(_setFontWeight(textStyle.fontWeight)),
+        ],
+      );
+
+  Widget _buildTextStyle(TextStyle textStyle) => Column(
+        children: <Widget>[
+          const Text('Style'),
+          const SizedBox(height: 2),
+          Text(
+            textStyle.fontStyle != null ? _setFontStyle : '-',
+          ),
         ],
       );
 
@@ -90,7 +94,7 @@ class _FontsDetailsWidget extends StatelessWidget {
         return 'w200';
       case FontWeight.w300:
         return 'w300';
-      // normal
+      // normal or regular
       case FontWeight.w400:
         return 'w400';
       case FontWeight.w500:
@@ -117,7 +121,7 @@ class _FontsDetailsWidget extends StatelessWidget {
         return 'Extra-light';
       case FontWeight.w300:
         return 'Light';
-      // normal
+      // normal or regular
       case FontWeight.w400:
         return 'Normal';
       case FontWeight.w500:
@@ -139,16 +143,16 @@ class _FontsDetailsWidget extends StatelessWidget {
   Widget _buildFirstColumnColorData(Color color) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          ColorCodeWidget(title: 'R', value: color.red),
-          ColorCodeWidget(title: 'B', value: color.blue),
+          ColorCodeWidget(code: 'R', value: color.red),
+          ColorCodeWidget(code: 'B', value: color.blue),
         ],
       );
 
   Widget _buildSecondColumnColorData(Color color) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          ColorCodeWidget(title: 'G', value: color.green),
-          ColorCodeWidget(title: 'A', value: color.alpha)
+          ColorCodeWidget(code: 'G', value: color.green),
+          ColorCodeWidget(code: 'A', value: color.alpha)
         ],
       );
 }

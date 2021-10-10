@@ -9,22 +9,25 @@ class HomeScreen extends StatelessWidget {
         length: 3,
         child: Scaffold(
           appBar: AppBar(
-            bottom: const TabBar(
-              tabs: <Widget>[
-                Tab(text: 'Colors'),
-                Tab(text: 'components'),
-                Tab(text: 'Fonts'),
-              ],
-            ),
-            title: const Text('Flutter Theme Demo'),
+            bottom: _buildTabBar(),
+            title: const Text('BeSquare Theme Sample App'),
           ),
-          body: TabBarView(
-            children: <Widget>[
-              ColorScreen(),
-              ComponentsScreen(),
-              FontsScreen(),
-            ],
-          ),
+          body: _buildBody(),
         ),
+      );
+
+  PreferredSizeWidget _buildTabBar() => const TabBar(
+        tabs: <Widget>[
+          Tab(text: 'Colors'),
+          Tab(text: 'components'),
+          Tab(text: 'Fonts'),
+        ],
+      );
+  Widget _buildBody() => TabBarView(
+        children: <Widget>[
+          ColorScreen(),
+          ComponentsScreen(),
+          FontsScreen(),
+        ],
       );
 }

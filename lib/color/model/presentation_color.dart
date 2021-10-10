@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// A class to contain color fields and values.
 class PresentationColor {
-  /// data model to present theme Colors.
+  /// Creates a data model to present theme Colors.
   const PresentationColor({
     required this.color,
     required this.name,

@@ -1,62 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_theme_demo/components/drop_down_widget.dart';
-import 'package:flutter_theme_demo/components/icon_button_widget.dart';
-import 'package:flutter_theme_demo/components/outlined_button.dart';
-import 'package:flutter_theme_demo/components/text_form_field_widget.dart';
+import 'package:flutter_theme_demo/components/widget/drop_down_widget.dart';
+import 'package:flutter_theme_demo/components/widget/icon_button_widget.dart';
+import 'package:flutter_theme_demo/components/widget/outlined_button.dart';
+import 'package:flutter_theme_demo/components/widget/text_form_field_widget.dart';
 
 class ComponentsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         body: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              _buildSectionTitle('compound components', context),
-              const TextFormFieldWidget(),
-              const SizedBox(height: 20),
-              const Text('Outlined Buttons'),
-              _buildOutlinedButtons(context),
-              const SizedBox(height: 20),
-              const Divider(thickness: 2),
-              _buildSectionTitle('Stand alone components', context),
-              Row(
-                children: <Widget>[
-                  Container(
-                    padding: const EdgeInsets.all(4),
-                    color: Colors.white,
-                    child: Column(
-                      children: const <Widget>[
-                        Text('Drop Down Buttons'),
-                        DropDownWidget(),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(width: 20),
-                  Container(
-                      padding: const EdgeInsets.all(4),
-                      color: Colors.white,
-                      child: Column(
-                        children: const <Widget>[
-                          Text('Icon Buttons'),
-                          IconbuttonWidget(),
-                        ],
-                      )),
-                ],
-              ),
-              const SizedBox(height: 20),
-              const SizedBox(height: 20),
-              _buildCard(context),
-              const SizedBox(height: 20),
-              _buildChip(),
-              const SizedBox(height: 20),
-            ],
-          ),
+          child: _buildComponents(context),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
+      );
+
+  Widget _buildComponents(BuildContext context) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          _buildSectionTitle('compound components', context),
+          const TextFormFieldWidget(),
+          const SizedBox(height: 20),
+          const Text('Outlined Buttons'),
+          _buildOutlinedButtons(context),
+          const SizedBox(height: 20),
+          const Divider(thickness: 2),
+          _buildSectionTitle('Stand alone components', context),
+          _buildStandAloneComponents(),
+          const SizedBox(height: 40),
+          _buildCard(context),
+          const SizedBox(height: 20),
+          _buildChip(),
+          const SizedBox(height: 20),
+        ],
       );
 
   Widget _buildSectionTitle(String title, BuildContext context) => Column(
@@ -85,6 +63,31 @@ class ComponentsScreen extends StatelessWidget {
         ],
       );
 
+  Widget _buildStandAloneComponents() => Row(
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.all(4),
+            color: Colors.white,
+            child: Column(
+              children: const <Widget>[
+                Text('Drop Down Buttons'),
+                DropDownWidget(),
+              ],
+            ),
+          ),
+          const SizedBox(width: 20),
+          Container(
+              padding: const EdgeInsets.all(4),
+              color: Colors.white,
+              child: Column(
+                children: const <Widget>[
+                  Text('Icon Buttons'),
+                  IconbuttonWidget(),
+                ],
+              )),
+        ],
+      );
+
   Widget _buildCard(BuildContext context) => Card(
         child: Container(
           color: Theme.of(context).colorScheme.primary,
@@ -92,9 +95,19 @@ class ComponentsScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           width: 300,
           height: 100,
-          child: Text(
-            'A demo card to show ui features.',
-            style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+          child: Row(
+            children: <Widget>[
+              Icon(
+                Icons.person,
+                color: Theme.of(context).colorScheme.onPrimary,
+              ),
+              const SizedBox(width: 8),
+              Text(
+                'A demo card to show ui features.',
+                style:
+                    TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+              )
+            ],
           ),
         ),
       );
