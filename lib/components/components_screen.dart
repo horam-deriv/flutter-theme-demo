@@ -4,6 +4,7 @@ import 'package:flutter_theme_demo/components/widget/icon_button_widget.dart';
 import 'package:flutter_theme_demo/components/widget/outlined_button.dart';
 import 'package:flutter_theme_demo/components/widget/text_form_field_widget.dart';
 
+/// Shows the second tab in the main screen.
 class ComponentsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(

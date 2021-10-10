@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 
+/// Shows an avatar in the Fonts screen.
 class AvatarChipWidget extends StatelessWidget {
+  /// construct an avatar to identify font information in each font tile.
   const AvatarChipWidget({
     required this.label,
     this.avatarText,
   });
 
+  /// color name.
   final String? avatarText;
+
+  ///
   final String label;
 
   @override

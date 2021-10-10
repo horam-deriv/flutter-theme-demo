@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// shows an IconButton in the screen.
 class IconbuttonWidget extends StatefulWidget {
+  /// creates an IconButton widget.
   const IconbuttonWidget();
 
   @override

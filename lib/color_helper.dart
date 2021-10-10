@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'color/model/presentation_color.dart';
 
+/// Theme colors names and their values
 class ColorHelper {
+  /// Creates a list of Theme colors with their names.
   ColorHelper(this._context) {
     _setColors();
   }
@@ -10,8 +12,10 @@ class ColorHelper {
   final List<PresentationColor> _colors = <PresentationColor>[];
   final List<PresentationColor> _schemeColors = <PresentationColor>[];
 
+  /// list of Theme colors
   List<PresentationColor> get themeColors => _colors;
 
+  /// List of Scheme colors
   List<PresentationColor> get schemeColors => _schemeColors;
 
   List<PresentationColor>? _setColors() {

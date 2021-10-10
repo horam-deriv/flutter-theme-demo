@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// Shows an OutlinedButton in a screen.
 class OutlinedButtonWidget extends StatelessWidget {
   /// Creates an outlined Button widget.
   const OutlinedButtonWidget({

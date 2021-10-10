@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
         title: 'BeSquare Theme Sample App',
         theme: ThemeData(
           primaryColor: Colors.blue,
-          brightness: Brightness.dark,
+          brightness: Brightness.light,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: HomeScreen(),

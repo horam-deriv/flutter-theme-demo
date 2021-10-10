@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// A widget to show fonts RGBA codes in the fonts screen.
 class ColorCodeWidget extends StatelessWidget {
   /// Creates a widget to show color code and its value.
   const ColorCodeWidget({
